@@ -282,7 +282,8 @@ class Mpesa
      * @param $Initiator | The name of Initiator to initiating the request.
      * @param $SecurityCredential | 	Base64 encoded string of the M-Pesa short code and password, which is encrypted using M-Pesa public key and validates the transaction on M-Pesa Core system.
      * @param $CommandID | Unique command for each transaction type, possible values are: TransactionStatusQuery.
-     * @param $TransactionID | Organization Receiving the funds.
+     * @param $TransactionID | Unique Id received with every transaction response.
+     * @param $OriginalConversationID | The OriginatorConversationID of the initial request sent to Safaricom API. || NOTE: The request can only take TranscactionID or OriginalConversationID but not both.
      * @param $PartyA | Organization/MSISDN sending the transaction
      * @param $IdentifierType | Type of organization receiving the transaction
      * @param $ResultURL | The path that stores information of transaction
@@ -312,6 +313,7 @@ class Mpesa
             'SecurityCredential' => $SecurityCredential,
             'CommandID' => $CommandID,
             'TransactionID' => $TransactionID,
+            'OriginalConversationID' => $OriginalConversationID,
             'PartyA' => $PartyA,
             'IdentifierType' => $IdentifierType,
             'ResultURL' => $ResultURL,
